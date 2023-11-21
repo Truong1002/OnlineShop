@@ -23,11 +23,25 @@ namespace OnlineShop
               namespaces: new[] { "OnlineShop.Controllers" }
           );
             routes.MapRoute(
-              name: "Product Detail",
-              url: "chi-tiet/{metatitle}-{id}",
-              defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
+              name: "Content Detail",
+              url: "tin-tuc/{metatitle}-{id}",
+              defaults: new { controller = "Content", action = "Detail", id = UrlParameter.Optional },
               namespaces: new[] { "OnlineShop.Controllers" }
           );
+
+            routes.MapRoute(
+             name: "Product Detail",
+             url: "chi-tiet/{metatitle}-{id}",
+             defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
+             namespaces: new[] { "OnlineShop.Controllers" }
+         );
+
+            routes.MapRoute(
+             name: "Tags",
+             url: "tag/{tagId}",
+             defaults: new { controller = "Content", action = "Tag", id = UrlParameter.Optional },
+             namespaces: new[] { "OnlineShop.Controllers" }
+         );
 
             routes.MapRoute(
              name: "About",
@@ -42,6 +56,13 @@ namespace OnlineShop
              defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
              namespaces: new[] { "OnlineShop.Controllers" }
          );
+
+            routes.MapRoute(
+            name: "News",
+            url: "tin-tuc",
+            defaults: new { controller = "Content", action = "Index", id = UrlParameter.Optional },
+            namespaces: new[] { "OnlineShop.Controllers" }
+        );
 
             routes.MapRoute(
              name: "Cart",
